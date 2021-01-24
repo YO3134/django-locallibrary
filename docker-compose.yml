@@ -7,12 +7,16 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - "TZ=Asia/Tokyo"
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - "TZ=Asia/Tokyo"
     volumes:
       - .:/code
     ports:
       - "8000:8000"
     depends_on:
       - db
+# docker環境内の時間設定
