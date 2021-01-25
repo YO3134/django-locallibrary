@@ -20,3 +20,4 @@ services:
     depends_on:
       - db
 # docker環境内の時間設定
+# https://github.com/dnvriend/docker-timezone-test/blob/master/docker-compose.yml
